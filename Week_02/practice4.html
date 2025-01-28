@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College ID Card</title>
+    <style>
+        /* Internal CSS for the College ID Card */
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .id-card {
+            width: 350px;
+            height: 450px;
+            background-color: #fff;
+            border-radius: 15px;
+            border: 2px solid #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            font-size: 14px;
+        }
+
+        .id-card-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .id-card-header h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .id-card-header p {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+        }
+
+        .id-card-body {
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .photo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #4CAF50;
+        }
+
+        .details {
+            flex: 1;
+            padding-left: 15px;
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+
+        .id-card-footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            
+        }
+
+        .id-card-footer p {
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="id-card">
+        <div class="id-card-header">
+            <h2>College Name</h2>
+            <p>Student ID Card</p>
+        </div>
+        <div class="id-card-body">
+            <div class="photo">
+                <img src="https://via.placeholder.com/150" alt="Student Photo">
+            </div>
+            <div class="details">
+                <p><strong>Name:</strong> Ayesha</p>
+                <p><strong>Roll No:</strong> 5023132</p>
+                <p><strong>Course:</strong> B.Tech in Computer Science</p>
+                <p><strong>Year:</strong> 2nd Year</p>
+            </div>
+        </div>
+        <div class="id-card-footer">
+            <p><strong>Contact:</strong> +911234567890</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+        </div>
+    </div>
+</body>
+</html>
