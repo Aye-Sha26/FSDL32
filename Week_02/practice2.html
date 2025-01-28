@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Portfolio - Web Developer">
+    <title>Portfolio</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background-color: darkred;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-family: 'Courier', monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            color: darkred;
+        }
+
+        /* Section styles */
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2em;
+            color: darkred;
+            margin-bottom: 20px;
+        }
+
+        /* About Me section */
+        #AboutMe img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        /* Skills table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: darkred;
+            color: white;
+        }
+
+        /* Projects section */
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        ol li a {
+            color: darkred;
+            text-decoration: none;
+        }
+
+        ol li a:hover {
+            color: #333;
+        }
+
+        /* Contact section */
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+        }
+
+        ul li a {
+            color: darkred;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            color: #333;
+        }
+
+        /* YouTube embed */
+        iframe {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: 315px;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to my Portfolio</h1>
+        <b>
+            <p>Web Developer</p>
+        </b>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#AboutMe">About Me</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="AboutMe">
+        <h2>About Me</h2>
+        <p>Hello! My name is Ayesha and I am a Web Developer</p>
+        <img src="https://images.picxy.com/cache/2021/4/10/7a930f8eb27f23950c7812c8717e0994.webp" alt="picture"
+            height="200" width="200">
+    </section>
+
+    <section id="Skills">
+        <h2>Skills</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Skills</th>
+                    <th>Proficiency Level</th>
+                    <th>Experience (Years)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>Advanced</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Beginner</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Intermediate</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="Projects">
+        <h2>Projects</h2>
+        <ol>
+            <li><a href="https://example.com/project1" target="_blank">Project 1</a> - This is my first project</li>
+            <li><a href="https://example.com/project2" target="_blank">Project 2</a> - This is my second project</li>
+            <li><a href="https://example.com/project3" target="_blank">Project 3</a> - This is my third project</li>
+        </ol>
+    </section>
+
+    <section id="Contact">
+        <h2>My Contacts</h2>
+        <ul>
+            <li>
+                <p>Email Id: <a href="mailto:ayeshakhalidm0@gmail.com">ayeshakhalidm0@gmail.com</a></p>
+            </li>
+            <li>
+                <p>Phone No: <a href="tel:+911234567890">+911234567890</a></p>
+            </li>
+            <li>
+                <p>LinkedIn: <a href="https://in.linkedin.com/">Ayesha</a></p>
+            </li>
+        </ul>
+    </section>
+
+    <h2>Demo YouTube Video</h2>
+    <iframe src="https://www.youtube.com/embed/iys_pmJSp9M?si=kZxkLYntt6hCyZ7Q" frameborder="0" width="560" height="315"
+        title="YouTube Demo Video" allowfullscreen></iframe>
+
+    <footer>
+        <p>@ 2025 Portfolio</p>
+    </footer>
+</body>
+
+</html>
