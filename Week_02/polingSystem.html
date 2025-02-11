@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .poll-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        .options button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poll-container">
+        <h2>Which is your favorite programming language?</h2>
+        <div class="options">
+            <button onclick="vote('Python')">Python</button>
+            <button onclick="vote('JavaScript')">JavaScript</button>
+            <button onclick="vote('C++')">C++</button>
+            <button onclick="vote('Java')">Java</button>
+        </div>
+        <h3>Poll Results:</h3>
+        <ul>
+            <li>Python: <span id="Python">0</span> votes</li>
+            <li>JavaScript: <span id="JavaScript">0</span> votes</li>
+            <li>C++: <span id="C++">0</span> votes</li>
+            <li>Java: <span id="Java">0</span> votes</li>
+        </ul>
+    </div>
+
+    <script>
+        let votes = { Python: 0, JavaScript: 0, "C++": 0, Java: 0 };
+
+        function vote(language) {
+            votes[language]++;
+            document.getElementById(language).innerText = votes[language];
+        }
+    </script>
+
+</body>
+</html>

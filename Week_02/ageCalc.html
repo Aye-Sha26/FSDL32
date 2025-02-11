@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 300px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Age Calculator</h2>
+        <input type="number" id="birthYear" placeholder="Enter birth year">
+        <button onclick="calculateAge()">Calculate Age</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateAge() {
+            let birthYear = document.getElementById("birthYear").value;
+            let currentYear = new Date().getFullYear();
+            let age = currentYear - birthYear;
+
+            if (birthYear === "" || birthYear > currentYear || birthYear < 1900) {
+                document.getElementById("result").innerHTML = "Please enter a valid birth year!";
+            } else {
+                document.getElementById("result").innerHTML = `You are ${age} years old.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
