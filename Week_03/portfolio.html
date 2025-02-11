@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .hero-section {
+            background-color: #4CAF50;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-link {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-4">Welcome to My Portfolio</h1>
+            <p class="lead">I'm a passionate web developer. Let's work together!</p>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Hello! I'm a web developer with a focus on front-end development. I have a passion for creating user-friendly and responsive websites. I enjoy learning new technologies and continuously improving my skills.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/400" class="img-fluid rounded-circle" alt="My Picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML</h5>
+                        <p class="card-text">I have a strong understanding of HTML5 and semantic structure to build the foundation of web pages.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS</h5>
+                        <p class="card-text">I use CSS3 to style and create visually appealing and responsive layouts using Flexbox and Grid.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript</h5>
+                        <p class="card-text">I write JavaScript to add interactivity to websites, including form validations, animations, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 My Portfolio | <a href="https://github.com" class="footer-link" target="_blank">GitHub</a> | <a href="mailto:example@example.com" class="footer-link">Email</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.10/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
