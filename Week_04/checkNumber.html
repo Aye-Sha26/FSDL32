@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +40,7 @@
 
         button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #1382ad;
             color: white;
             border: none;
             font-size: 18px;
@@ -60,15 +61,16 @@
     </style>
 
 </head>
+
 <body>
 
     <div class="container">
         <h1>Even or Odd Checker</h1>
-        
+
         <!-- Input field to enter a number -->
         <input type="number" id="numberInput" placeholder="Enter a number">
         <button onclick="checkEvenOdd()">Check</button>
-        
+
         <!-- Area to show result -->
         <div id="result"></div>
     </div>
@@ -80,9 +82,9 @@
             // Get the value entered in the input field
             let num = document.getElementById("numberInput").value;
             let resultDiv = document.getElementById("result");  // Get the div to display the result
-            
+
             // Clear previous result
-            resultDiv.innerHTML = '';  
+            resultDiv.innerHTML = '';
 
             // Check if the input is a valid number
             if (num === '' || isNaN(num)) {
@@ -100,4 +102,5 @@
     </script>
 
 </body>
+
 </html>
