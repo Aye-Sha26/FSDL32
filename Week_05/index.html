@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Foodie's Haven</h1>
+        </div>
+        <div class="cart">
+            <button onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-item" data-name="Pizza" data-price="12.99">
+                <img src="https://via.placeholder.com/150" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>$12.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="menu-item" data-name="Burger" data-price="8.99">
+                <img src="https://via.placeholder.com/150" alt="Burger">
+                <h3>Burger</h3>
+                <p>$8.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="menu-item" data-name="Pasta" data-price="10.99">
+                <img src="https://via.placeholder.com/150" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>$10.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </section>
+
+        <section class="cart-popup" id="cart-popup">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will appear here -->
+            </ul>
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <button onclick="clearCart()">Clear Cart</button>
+            <button onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Foodie's Haven | All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
