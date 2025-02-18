@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff6347;
+            padding: 15px;
+            color: white;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header .cart button {
+            background-color: #fff;
+            color: #ff6347;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        header .cart button:hover {
+            background-color: #ff4500;
+            color: white;
+        }
+
+        main {
+            margin-top: 30px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 30%;
+            text-align: center;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .menu-item h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .menu-item p {
+            color: #555;
+        }
+
+        .menu-item .add-to-cart {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .menu-item .add-to-cart:hover {
+            background-color: #ff4500;
+        }
+
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: white;
+            width: 300px;
+            height: 100%;
+            padding: 20px;
+            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            overflow-y: auto;
+        }
+
+        .cart-popup h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cart-popup ul {
+            list-style-type: none;
+        }
+
+        .cart-popup ul li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Foodie's Haven</h1>
+        </div>
+        <div class="cart">
+            <button onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-item" data-name="Pizza" data-price="12.99">
+                <img src="https://via.placeholder.com/150" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>$12.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="menu-item" data-name="Burger" data-price="8.99">
+                <img src="https://via.placeholder.com/150" alt="Burger">
+                <h3>Burger</h3>
+                <p>$8.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="menu-item" data-name="Pasta" data-price="10.99">
+                <img src="https://via.placeholder.com/150" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>$10.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </section>
+
+        <section class="cart-popup" id="cart-popup">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will appear here -->
+            </ul>
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <button onclick="clearCart()">Clear Cart</button>
+            <button onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Foodie's Haven | All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function updateCart() {
+            const cartCount = document.getElementById('cart-count');
+            const totalPrice = document.getElementById('total-price');
+            const cartItems = document.getElementById('cart-items');
+            
+            // Clear cart items in popup
+            cartItems.innerHTML = '';
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                total += parseFloat(item.price);
+                
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(listItem);
+            });
+            
+            cartCount.textContent = cart.length;
+            totalPrice.textContent = total.toFixed(2);
+        }
+
+        function addToCart(event) {
+            const menuItem = event.target.closest('.menu-item');
+            const itemName = menuItem.getAttribute('data-name');
+            const itemPrice = menuItem.getAttribute('data-price');
+            
+            cart.push({ name: itemName, price: itemPrice });
+            updateCart();
+        }
+
+        function toggleCart() {
+            const cartPopup = document.getElementById('cart-popup');
+            cartPopup.style.display = (cartPopup.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Thank you for your order! Your food will be delivered soon.');
+                clearCart();
+            }
+        }
+
+        const addButtons = document.querySelectorAll('.add-to-cart');
+        addButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+    </script>
+</body>
+</html>
